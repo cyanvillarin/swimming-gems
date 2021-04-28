@@ -12,7 +12,7 @@
 		877BCAA32639021900EB0CDF /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877BCAA12639021900EB0CDF /* HomeTableViewCell.swift */; };
 		877BCAA42639021900EB0CDF /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 877BCAA22639021900EB0CDF /* HomeTableViewCell.xib */; };
 		877BCAA72639071B00EB0CDF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877BCAA62639071A00EB0CDF /* DetailViewController.swift */; };
-		877BCAAB2639080300EB0CDF /* data.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 877BCAAA2639080300EB0CDF /* data.tsv */; };
+		877BCACC263934A600EB0CDF /* data.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 877BCACB263934A600EB0CDF /* data.tsv */; };
 		8790E0BC2638EDE500E18BAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8790E0BB2638EDE500E18BAA /* AppDelegate.swift */; };
 		8790E0BE2638EDE500E18BAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8790E0BD2638EDE500E18BAA /* SceneDelegate.swift */; };
 		8790E0C02638EDE500E18BAA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8790E0BF2638EDE500E18BAA /* HomeViewController.swift */; };
@@ -28,7 +28,7 @@
 		877BCAA12639021900EB0CDF /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		877BCAA22639021900EB0CDF /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		877BCAA62639071A00EB0CDF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		877BCAAA2639080300EB0CDF /* data.tsv */ = {isa = PBXFileReference; lastKnownFileType = file; path = data.tsv; sourceTree = SOURCE_ROOT; };
+		877BCACB263934A600EB0CDF /* data.tsv */ = {isa = PBXFileReference; lastKnownFileType = file; path = data.tsv; sourceTree = SOURCE_ROOT; };
 		8790E0B82638EDE500E18BAA /* CatalogueAppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatalogueAppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8790E0BB2638EDE500E18BAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8790E0BD2638EDE500E18BAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		8790E0BA2638EDE500E18BAA /* CatalogueAppTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				877BCAAA2639080300EB0CDF /* data.tsv */,
+				877BCACB263934A600EB0CDF /* data.tsv */,
 				8790E0BB2638EDE500E18BAA /* AppDelegate.swift */,
 				8790E0BD2638EDE500E18BAA /* SceneDelegate.swift */,
 				8790E0BF2638EDE500E18BAA /* HomeViewController.swift */,
@@ -168,7 +168,7 @@
 				8790E0C82638EDE800E18BAA /* LaunchScreen.storyboard in Resources */,
 				8790E0C52638EDE800E18BAA /* Assets.xcassets in Resources */,
 				877BCAA42639021900EB0CDF /* HomeTableViewCell.xib in Resources */,
-				877BCAAB2639080300EB0CDF /* data.tsv in Resources */,
+				877BCACC263934A600EB0CDF /* data.tsv in Resources */,
 				8790E0C32638EDE500E18BAA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

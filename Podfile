@@ -7,6 +7,7 @@ target 'CatalogueAppTemplate' do
 
   # Pods for CatalogueAppTemplate
 
+  pod 'AlamofireImage'
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
   pod 'Firebase/RemoteConfig'

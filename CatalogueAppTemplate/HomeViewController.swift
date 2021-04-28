@@ -27,6 +27,8 @@ class HomeViewController: UIViewController {
          itemList = convertArrayIntoClassList(data: array)
       }
       
+      
+      
    }
    
    func readDataFromTSV(fileName:String, fileType: String) -> String? {
@@ -45,13 +47,13 @@ class HomeViewController: UIViewController {
    }
    
    func convertDataIntoArray(data: String) -> [[String]] {
-       var result: [[String]] = []
-       let rows = data.components(separatedBy: "\n")
-       for row in rows {
-           let columns = row.components(separatedBy: "\t")
-           result.append(columns)
-       }
-       return result
+      var result: [[String]] = []
+      let rows = data.components(separatedBy: "\n")
+      for row in rows {
+         let columns = row.components(separatedBy: "\t")
+         result.append(columns)
+      }
+      return result
    }
    
    func convertArrayIntoClassList(data: [[String]]) -> [ItemObject] {
@@ -62,7 +64,6 @@ class HomeViewController: UIViewController {
       }
       return tempItemList
    }
-   
    
 }
 
@@ -80,9 +81,15 @@ extension HomeViewController: UITableViewDataSource {
       let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
       cell.initWithData(data: itemList[indexPath.row])
       cell.selectionStyle = .none
+      
+      if let pictureURL = URL(string: itemList[indexPath.row].image_link) {
+         cell.itemImageView.af.setImage(withURL: pictureURL,
+                                        imageTransition: UIImageView.ImageTransition.crossDissolve(0.5))
+      }
+      
       return cell
    }
-
+   
 }
 
 extension HomeViewController: UITableViewDelegate {

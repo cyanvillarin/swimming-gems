@@ -1,4 +1,7 @@
 PODS:
+  - Alamofire (5.4.1)
+  - AlamofireImage (4.2.0):
+    - Alamofire (~> 5.4)
   - Firebase/Analytics (7.6.0):
     - Firebase/Core
   - Firebase/Core (7.6.0):
@@ -113,6 +116,7 @@ PODS:
   - PromisesObjC (1.2.12)
 
 DEPENDENCIES:
+  - AlamofireImage
   - Firebase/Analytics
   - Firebase/Core
   - Firebase/Crashlytics
@@ -124,6 +128,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - AlamofireImage
     - Firebase
     - FirebaseABTesting
     - FirebaseAnalytics
@@ -146,6 +152,8 @@ SPEC REPOS:
     - PromisesObjC
 
 SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
   Firebase: e1e089d9aac215a52442583f818ab61de3c4581b
   FirebaseABTesting: 8d7f24fdf94cd10f06a84c879262a1159e22db28
   FirebaseAnalytics: 9f8f4feab1f3fddf4e4515f8f022fe6aa9e51043
@@ -167,6 +175,6 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: a0b04f944eb2501d0a1da6a1e82e90808d0d5391
+PODFILE CHECKSUM: 2b133c9dfb2dbfe19676a61db4581a4de5c5fcd5
 
 COCOAPODS: 1.10.1

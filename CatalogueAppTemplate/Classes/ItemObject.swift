@@ -12,15 +12,13 @@ class ItemObject {
    var subtitle: String!
    var description: String!
    var image_link: String!
-   var reference1: String!
-   var reference2: String!
+   var reference: String!
    
    init(itemData: [String]) {
       title = itemData[0]
       subtitle = itemData[1]
       description = itemData[2]
       image_link = itemData[3]
-      reference1 = itemData[4]
-      reference2 = itemData[5]
+      reference = itemData[4]
    }
 }

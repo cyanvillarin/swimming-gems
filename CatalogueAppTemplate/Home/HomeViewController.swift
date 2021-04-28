@@ -16,6 +16,8 @@ class HomeViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      self.title = "Swimming Gems"
+      
       tableView.delegate = self
       tableView.dataSource = self
       tableView.separatorStyle = .none
@@ -26,8 +28,6 @@ class HomeViewController: UIViewController {
          let array = convertDataIntoArray(data: stringTSV)
          itemList = convertArrayIntoClassList(data: array)
       }
-      
-      
       
    }
    
@@ -94,6 +94,10 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: UITableViewDelegate {
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      //
+      if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController,
+         let navigator = navigationController {
+         viewController.itemData = itemList[indexPath.row]
+         navigator.pushViewController(viewController, animated: true)
+      }
    }
 }

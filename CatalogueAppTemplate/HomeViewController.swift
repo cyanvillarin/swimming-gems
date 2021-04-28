@@ -11,8 +11,16 @@ class HomeViewController: UIViewController {
    
    var itemList: [ItemObject] = []
    
+   @IBOutlet var tableView: UITableView!
+   
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      tableView.delegate = self
+      tableView.dataSource = self
+      tableView.separatorStyle = .none
+      
+      tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeTableViewCell")
       
       if let stringTSV = readDataFromTSV(fileName: "data", fileType: "tsv") {
          let array = convertDataIntoArray(data: stringTSV)
@@ -58,3 +66,27 @@ class HomeViewController: UIViewController {
    
 }
 
+extension HomeViewController: UITableViewDataSource {
+   
+   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+      return 93.0
+   }
+   
+   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      return itemList.count
+   }
+   
+   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
+      cell.initWithData(data: itemList[indexPath.row])
+      cell.selectionStyle = .none
+      return cell
+   }
+
+}
+
+extension HomeViewController: UITableViewDelegate {
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      //
+   }
+}

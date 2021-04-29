@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import GoogleMobileAds
+import Nuke
 
 class HomeViewController: UIViewController {
    
@@ -21,6 +22,10 @@ class HomeViewController: UIViewController {
       super.viewDidLoad()
       
       self.title = "Swimming Gems"
+      navigationController?.navigationBar.barTintColor = navigationBarThemeColor
+      navigationController?.navigationBar.tintColor = UIColor.white
+      navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+      navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: navigationBarThemeColor]
       
       // config googleAds
       var adUnitId = ""
@@ -136,13 +141,21 @@ extension HomeViewController: UITableViewDataSource {
       cell.initWithData(data: itemList[indexPath.row])
       cell.selectionStyle = .none
       
-      if let pictureURL = URL(string: itemList[indexPath.row].image_link) {
-         cell.itemImageView.af.setImage(withURL: pictureURL,
-                                        cacheKey: itemList[indexPath.row].cacheKey,
-                                        imageTransition: UIImageView.ImageTransition.crossDissolve(0.5))
+      if let imageURL = URL(string: itemList[indexPath.row].image_link) {
+         let options = ImageLoadingOptions(
+            placeholder: UIImage(named: "default-item-image"),
+            transition: .fadeIn(duration: 0.33),
+            failureImage: UIImage(named: "default-item-image"),
+            failureImageTransition: .fadeIn(duration: 0.33)
+         )
+         Nuke.loadImage(with: imageURL, options: options, into: cell.itemImageView)
       }
       
       return cell
+   }
+   
+   override var preferredStatusBarStyle: UIStatusBarStyle {
+      return .lightContent
    }
    
 }

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AlamofireImage
 
 class HomeTableViewCell: UITableViewCell {
    
@@ -16,7 +15,7 @@ class HomeTableViewCell: UITableViewCell {
    
    override func awakeFromNib() {
       super.awakeFromNib()
-      itemImageView.layer.cornerRadius = 5.0
+      itemImageView.layer.cornerRadius = 8.0
       itemImageView.layer.masksToBounds = true
    }
    

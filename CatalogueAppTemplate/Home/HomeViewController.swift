@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import Firebase
+import GoogleMobileAds
 
 class HomeViewController: UIViewController {
+   
+   var interstitial: GADInterstitial!
    
    var itemList: [ItemObject] = []
    
@@ -17,6 +21,20 @@ class HomeViewController: UIViewController {
       super.viewDidLoad()
       
       self.title = "Swimming Gems"
+      
+      // config googleAds
+      var adUnitId = ""
+      if isForRelease {
+         adUnitId = prodUnitId
+      } else {  // testing
+         adUnitId = testUnitId
+      }
+      
+      // instantiate the ad unit
+      interstitial = GADInterstitial(adUnitID: adUnitId)
+      
+      // requests the ad
+      requestAd()
       
       tableView.delegate = self
       tableView.dataSource = self
@@ -29,6 +47,42 @@ class HomeViewController: UIViewController {
          itemList = convertArrayIntoClassList(data: array)
       }
       
+   }
+   
+   override func viewWillAppear(_ animated: Bool) {
+      navigationController?.navigationBar.prefersLargeTitles = true
+   }
+   
+   // request ad if not yet requested
+   func requestAd() {
+      let isAdRequested = UserDefaults.standard.bool(forKey: "isAdRequested")
+      if !isAdRequested {
+         NSLog("Requesting ads.")
+         let request = GADRequest()
+         interstitial.load(request)
+         UserDefaults.standard.set(true, forKey: "isAdRequested")
+      } else {
+         NSLog("Ad was already requested.")
+      }
+   }
+   
+   // show ads if its ready, and it hasn't been shown yet
+   func showAd() {
+      let isAdShown = UserDefaults.standard.bool(forKey: "isAdShown")
+      if !isAdShown {
+         // checks if the interstitial is instantiated properly
+         if interstitial != nil {
+            if interstitial.isReady {
+               NSLog("Presenting ads.")
+               interstitial.present(fromRootViewController: self)
+               UserDefaults.standard.set(true, forKey: "isAdShown")
+            } else {
+               NSLog("Ad is not ready yet.")
+            }
+         }
+      } else {
+         NSLog("Ad was shown already.")
+      }
    }
    
    func readDataFromTSV(fileName:String, fileType: String) -> String? {
@@ -84,6 +138,7 @@ extension HomeViewController: UITableViewDataSource {
       
       if let pictureURL = URL(string: itemList[indexPath.row].image_link) {
          cell.itemImageView.af.setImage(withURL: pictureURL,
+                                        cacheKey: itemList[indexPath.row].cacheKey,
                                         imageTransition: UIImageView.ImageTransition.crossDissolve(0.5))
       }
       

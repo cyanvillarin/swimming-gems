@@ -15,6 +15,6 @@ target 'CatalogueAppTemplate' do
   pod 'Firebase/Messaging'
   pod 'Firebase/Core'
   pod 'NVActivityIndicatorView'
-  pod 'Google-Mobile-Ads-SDK'
+  pod 'Google-Mobile-Ads-SDK', '7.67.0'
 
 end

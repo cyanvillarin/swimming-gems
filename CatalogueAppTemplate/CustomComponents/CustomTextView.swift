@@ -26,12 +26,6 @@ class CustomTextView: UITextView {
    private func setup() {
       self.delegate = self
       self.backgroundColor = .clear
-      self.layer.borderWidth = 1.0
-      if #available(iOS 13.0, *) {
-         self.layer.borderColor = UIColor.quaternaryLabel.cgColor
-      } else {
-         self.layer.borderColor = UIColor.darkGray.cgColor
-      }
       self.layer.masksToBounds = true
       self.layer.cornerRadius = 5.0
       self.textContainerInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)

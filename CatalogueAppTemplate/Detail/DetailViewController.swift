@@ -19,16 +19,21 @@ class DetailViewController: UIViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      
       self.title = itemData.title
+      self.navigationItem.largeTitleDisplayMode = .never
       
+      itemImageView.layer.cornerRadius = 5.0
+      itemImageView.layer.masksToBounds = true
       if let imageURL = URL(string: itemData.image_link) {
-         itemImageView.af.setImage(withURL: imageURL, imageTransition: UIImageView.ImageTransition.crossDissolve(0.5))
+         itemImageView.af.setImage(withURL: imageURL,
+                                   cacheKey: itemData.cacheKey,
+                                   imageTransition: UIImageView.ImageTransition.crossDissolve(0.5))
       }
       
       subtitleLabel.text = itemData.subtitle
       descriptionLabel.text = itemData.description
-      referenceLabel.text = itemData.reference1
+      descriptionLabel.isUserInteractionEnabled = false
+      referenceLabel.text = itemData.reference
    }
    
 }

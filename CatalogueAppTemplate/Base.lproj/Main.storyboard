@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d3Z-z6-Yme">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -69,8 +70,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SbU-O1-yk2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-item-image" translatesAutoresizingMaskIntoConstraints="NO" id="SbU-O1-yk2">
                                 <rect key="frame" x="85" y="74" width="220" height="220"/>
+                                <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="7Mx-am-mKq"/>
                                     <constraint firstAttribute="height" constant="220" id="pqc-NO-fsc"/>
@@ -91,7 +93,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIv-Mc-UWY">
-                                <rect key="frame" x="30.000000000000007" y="789.66666666666663" width="89.666666666666686" height="14.333333333333371"/>
+                                <rect key="frame" x="30" y="789.66666666666663" width="330" height="14.333333333333371"/>
                                 <attributedString key="attributedText">
                                     <fragment content="https://test.com">
                                         <attributes>
@@ -118,6 +120,7 @@
                             <constraint firstItem="a9E-gt-B1m" firstAttribute="centerX" secondItem="Ere-fI-1AR" secondAttribute="centerX" id="fbf-Br-DSr"/>
                             <constraint firstItem="SbU-O1-yk2" firstAttribute="centerX" secondItem="Ere-fI-1AR" secondAttribute="centerX" id="mVg-q2-fkB"/>
                             <constraint firstItem="Rzx-hJ-w0E" firstAttribute="trailing" secondItem="vc7-3Q-QRd" secondAttribute="trailing" constant="35" id="p1q-Nz-IVf"/>
+                            <constraint firstItem="Rzx-hJ-w0E" firstAttribute="trailing" secondItem="wIv-Mc-UWY" secondAttribute="trailing" constant="30" id="wLo-fR-5qx"/>
                         </constraints>
                     </view>
                     <connections>
@@ -133,8 +136,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="default-item-image" width="256" height="256"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="quaternaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -9,6 +9,8 @@ import UIKit
 import Firebase
 import GoogleMobileAds
 import Nuke
+import AppTrackingTransparency
+import AdSupport
 
 class HomeViewController: UIViewController {
    
@@ -20,6 +22,12 @@ class HomeViewController: UIViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      if #available(iOS 14, *) {
+         ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+            // Tracking authorization completed. Start loading ads here.
+         })
+      }
       
       self.title = "Swimming Gems"
       navigationController?.navigationBar.barTintColor = navigationBarThemeColor
@@ -165,6 +173,7 @@ extension HomeViewController: UITableViewDelegate {
       if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController,
          let navigator = navigationController {
          viewController.itemData = itemList[indexPath.row]
+         showAd()
          navigator.pushViewController(viewController, animated: true)
       }
    }

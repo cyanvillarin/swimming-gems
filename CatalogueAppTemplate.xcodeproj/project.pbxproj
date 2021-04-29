@@ -13,7 +13,6 @@
 		877BCAA42639021900EB0CDF /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 877BCAA22639021900EB0CDF /* HomeTableViewCell.xib */; };
 		877BCAA72639071B00EB0CDF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877BCAA62639071A00EB0CDF /* DetailViewController.swift */; };
 		878E61E4263964750066531E /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878E61DF263964200066531E /* CustomTextView.swift */; };
-		878E61EB263977E70066531E /* data.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 878E61EA263977E70066531E /* data.tsv */; };
 		8790E0BC2638EDE500E18BAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8790E0BB2638EDE500E18BAA /* AppDelegate.swift */; };
 		8790E0BE2638EDE500E18BAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8790E0BD2638EDE500E18BAA /* SceneDelegate.swift */; };
 		8790E0C02638EDE500E18BAA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8790E0BF2638EDE500E18BAA /* HomeViewController.swift */; };
@@ -23,6 +22,7 @@
 		87EF6313263A4E8200A9839F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87EF6312263A4E8200A9839F /* GoogleService-Info.plist */; };
 		87EF6318263A4EC800A9839F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EF6317263A4EC800A9839F /* Constants.swift */; };
 		87EF636B263A77A500A9839F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EF636A263A77A500A9839F /* UIColorExtension.swift */; };
+		87EF6371263A85B400A9839F /* data.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 87EF6370263A85B400A9839F /* data.tsv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,6 @@
 		877BCAA22639021900EB0CDF /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		877BCAA62639071A00EB0CDF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		878E61DF263964200066531E /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
-		878E61EA263977E70066531E /* data.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.tsv; sourceTree = "<group>"; };
 		8790E0B82638EDE500E18BAA /* CatalogueAppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatalogueAppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8790E0BB2638EDE500E18BAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8790E0BD2638EDE500E18BAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		87EF6312263A4E8200A9839F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		87EF6317263A4EC800A9839F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		87EF636A263A77A500A9839F /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		87EF6370263A85B400A9839F /* data.tsv */ = {isa = PBXFileReference; lastKnownFileType = file; path = data.tsv; sourceTree = SOURCE_ROOT; };
 		9427C2A88AB87A909605066F /* Pods_CatalogueAppTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatalogueAppTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -124,9 +124,9 @@
 		8790E0BA2638EDE500E18BAA /* CatalogueAppTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				87EF6370263A85B400A9839F /* data.tsv */,
 				87EF6312263A4E8200A9839F /* GoogleService-Info.plist */,
 				8790E0C92638EDE800E18BAA /* Info.plist */,
-				878E61EA263977E70066531E /* data.tsv */,
 				878E61EE263978170066531E /* Home */,
 				878E61EF2639781F0066531E /* Detail */,
 				878E61ED263978100066531E /* Classes */,
@@ -228,7 +228,7 @@
 				8790E0C82638EDE800E18BAA /* LaunchScreen.storyboard in Resources */,
 				8790E0C52638EDE800E18BAA /* Assets.xcassets in Resources */,
 				877BCAA42639021900EB0CDF /* HomeTableViewCell.xib in Resources */,
-				878E61EB263977E70066531E /* data.tsv in Resources */,
+				87EF6371263A85B400A9839F /* data.tsv in Resources */,
 				8790E0C32638EDE500E18BAA /* Main.storyboard in Resources */,
 				87EF6313263A4E8200A9839F /* GoogleService-Info.plist in Resources */,
 			);
@@ -447,6 +447,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyanvillarin.swimminggems;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -468,6 +469,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyanvillarin.swimminggems;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
